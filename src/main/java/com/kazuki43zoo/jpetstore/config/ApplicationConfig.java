@@ -36,11 +36,6 @@ public class ApplicationConfig {
   }
 
   @Bean
-  PasswordEncoder passwordEncoder() {
-    return new Pbkdf2PasswordEncoder();
-  }
-
-  @Bean
   List<String> clCreditCardTypes() {
     return Arrays.asList("Visa", "MasterCard", "American Express");
   }
