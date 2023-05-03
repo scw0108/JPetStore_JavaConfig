@@ -35,7 +35,7 @@ import java.util.Optional;
 /**
  * @author Kazuki Shimizu
  */
-@Service
+
 @RequiredArgsConstructor
 public class OrderService {
 	private static final String ORDER_ID_SEQ_NAME = "ordernum";

@@ -32,7 +32,6 @@ import javax.validation.groups.Default;
  * @author Kazuki Shimizu
  */
 @RequestMapping("/accounts")
-
 public class AccountController {
 
 	private final AccountService accountService;

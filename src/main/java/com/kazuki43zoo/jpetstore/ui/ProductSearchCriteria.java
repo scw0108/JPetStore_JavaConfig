@@ -26,7 +26,6 @@ import java.io.Serializable;
  * @author Kazuki Shimizu
  */
 @SessionScope
-@Component
 @Getter
 @Setter
 public class ProductSearchCriteria implements Serializable {

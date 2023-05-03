@@ -31,7 +31,6 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author Kazuki Shimizu
  */
 @SessionScope
-@Component
 public class Cart implements Serializable {
 
 	private static final long serialVersionUID = 8329559983943337176L;

@@ -37,7 +37,6 @@ import java.util.List;
  */
 @SessionAttributes("orderForm")
 @RequestMapping("/my/orders")
-@Controller
 @RequiredArgsConstructor
 public class MyOrderController {
 
