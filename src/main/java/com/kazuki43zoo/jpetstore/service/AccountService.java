@@ -27,8 +27,8 @@ import java.util.Optional;
  */
 public class AccountService {
 
-	private final AccountMapper accountMapper;
-	private final PasswordEncoder passwordEncoder;
+	private AccountMapper accountMapper;
+	private PasswordEncoder passwordEncoder;
 
 	public AccountService(AccountMapper accountMapper, PasswordEncoder passwordEncoder) {
 		this.accountMapper = accountMapper;

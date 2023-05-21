@@ -35,8 +35,8 @@ import java.util.List;
 @RequestMapping("/catalog")
 public class CatalogController {
 
-	private final CatalogService catalogService;
-	private final ProductSearchCriteria productSearchCriteria;
+	private CatalogService catalogService;
+	private ProductSearchCriteria productSearchCriteria;
 
 	public CatalogController(CatalogService catalogService, ProductSearchCriteria productSearchCriteria) {
 		this.catalogService = catalogService;

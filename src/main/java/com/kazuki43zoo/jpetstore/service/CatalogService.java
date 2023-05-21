@@ -33,9 +33,9 @@ import java.util.stream.Stream;
  */
 public class CatalogService {
 
-	private final CategoryMapper categoryMapper;
-	private final ItemMapper itemMapper;
-	private final ProductMapper productMapper;
+	private CategoryMapper categoryMapper;
+	private ItemMapper itemMapper;
+	private ProductMapper productMapper;
 
 	public CatalogService(CategoryMapper categoryMapper, ItemMapper itemMapper, ProductMapper productMapper) {
 		this.categoryMapper = categoryMapper;

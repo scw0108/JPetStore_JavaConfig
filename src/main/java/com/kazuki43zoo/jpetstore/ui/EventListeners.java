@@ -30,12 +30,15 @@ import java.util.List;
 /**
  * @author Kazuki Shimizu
  */
-@Component
-@RequiredArgsConstructor
 public class EventListeners {
 
-	private final CatalogService catalogService;
-	private final Favourite favourite;
+	private CatalogService catalogService;
+	private Favourite favourite;
+
+	public EventListeners( CatalogService catalogService,Favourite favourite) {
+		this.catalogService=catalogService;
+		this.favourite=favourite;
+	}
 
 	@EventListener
 	public void handleAuthenticationSuccessEvent(AuthenticationSuccessEvent event) {

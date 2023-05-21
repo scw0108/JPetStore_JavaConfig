@@ -34,7 +34,7 @@ import javax.validation.groups.Default;
 @RequestMapping("/accounts")
 public class AccountController {
 
-	private final AccountService accountService;
+	private AccountService accountService;
 
 	public AccountController(AccountService accountService) {
 		this.accountService = accountService;

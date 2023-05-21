@@ -37,11 +37,14 @@ import java.util.List;
  */
 @SessionAttributes("orderForm")
 @RequestMapping("/my/orders")
-@RequiredArgsConstructor
 public class MyOrderController {
 
-  private final OrderService orderService;
-  private final Cart cart;
+  private OrderService orderService;
+  private Cart cart;
+  public MyOrderController(OrderService orderService,Cart cart){
+    this.orderService=orderService;
+    this.cart=cart;
+  }
 
   @ModelAttribute("orderForm")
   public OrderForm setUpForm() {

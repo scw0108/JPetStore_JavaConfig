@@ -29,7 +29,7 @@ import java.util.Optional;
 
 public class AccountUserDetailsService implements UserDetailsService {
 
-	private final AccountMapper accountMapper;
+	private AccountMapper accountMapper;
 
 	public AccountUserDetailsService(AccountMapper accountMapper) {
 		this.accountMapper = accountMapper;

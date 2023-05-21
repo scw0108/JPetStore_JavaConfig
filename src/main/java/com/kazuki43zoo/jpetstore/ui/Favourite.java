@@ -28,7 +28,6 @@ import java.util.List;
  * @author Kazuki Shimizu
  */
 @SessionScope
-@Component
 @Getter
 @Setter
 public class Favourite implements Serializable {
