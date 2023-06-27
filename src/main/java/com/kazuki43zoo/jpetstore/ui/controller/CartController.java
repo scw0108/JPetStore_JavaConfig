@@ -38,6 +38,7 @@ public class CartController {
 	public CartController(CatalogService catalogService, Cart cart) {
 		this.catalogService = catalogService;
 		this.cart = cart;
+		System.out.println(cart);
 	}
 
 	@ModelAttribute
@@ -60,6 +61,7 @@ public class CartController {
 			cart.incrementQuantityByItemId(itemId);
 		} else {
 			boolean isInStock = catalogService.isItemInStock(itemId);
+			System.out.println(isInStock);
 			Item item = catalogService.getItem(itemId);
 			cart.addItem(item, isInStock);
 		}

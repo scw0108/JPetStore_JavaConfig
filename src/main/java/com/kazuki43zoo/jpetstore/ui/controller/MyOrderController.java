@@ -44,6 +44,7 @@ public class MyOrderController {
   public MyOrderController(OrderService orderService,Cart cart){
     this.orderService=orderService;
     this.cart=cart;
+    //System.out.println(cart);
   }
 
   @ModelAttribute("orderForm")

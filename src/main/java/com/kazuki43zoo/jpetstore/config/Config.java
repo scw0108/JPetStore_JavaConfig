@@ -9,15 +9,18 @@ import com.kazuki43zoo.jpetstore.ui.Cart;
 import com.kazuki43zoo.jpetstore.ui.EventListeners;
 import com.kazuki43zoo.jpetstore.ui.Favourite;
 import com.kazuki43zoo.jpetstore.ui.ProductSearchCriteria;
-import com.kazuki43zoo.jpetstore.ui.controller.AccountController;
-import com.kazuki43zoo.jpetstore.ui.controller.CartController;
-import com.kazuki43zoo.jpetstore.ui.controller.CatalogController;
-import com.kazuki43zoo.jpetstore.ui.controller.MyOrderController;
+import com.kazuki43zoo.jpetstore.ui.controller.*;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.mapper.MapperFactoryBean;
+import org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.event.ApplicationEventMulticaster;
+import org.springframework.context.event.SimpleApplicationEventMulticaster;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
@@ -136,5 +139,16 @@ public class Config {
     @Bean
     Clock clock() {
         return Clock.systemDefaultZone();
+    }
+
+    @Bean
+    public ApplicationEventPublisher publisher() {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        context.refresh();
+        return context;
+    }
+    @Bean
+    MyAccountController myAccountController() throws Exception {
+        return new MyAccountController(accountService(),publisher());
     }
 }

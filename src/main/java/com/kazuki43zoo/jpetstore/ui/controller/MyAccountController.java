@@ -16,12 +16,13 @@
 package com.kazuki43zoo.jpetstore.ui.controller;
 
 import com.kazuki43zoo.jpetstore.component.message.Messages;
+import com.kazuki43zoo.jpetstore.config.Config;
 import com.kazuki43zoo.jpetstore.domain.Account;
 import com.kazuki43zoo.jpetstore.service.AccountService;
 import com.kazuki43zoo.jpetstore.component.event.EntityChangedEvent;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,12 +38,16 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  * @author Kazuki Shimizu
  */
 @RequestMapping("/my/account")
-@Controller
-@RequiredArgsConstructor
-public class MyAccountController {
+public class MyAccountController{
 
-	private final AccountService accountService;
-	private final ApplicationEventPublisher publisher;
+	private AccountService accountService;
+	private ApplicationEventPublisher publisher;
+
+	public MyAccountController(AccountService accountService, ApplicationEventPublisher publisher) {
+		this.accountService = accountService;
+		this.publisher = publisher;
+		System.out.println((publisher));
+	}
 
 	@ModelAttribute
 	public AccountForm setUpForm() {
