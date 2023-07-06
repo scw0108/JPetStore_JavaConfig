@@ -13,14 +13,10 @@ import com.kazuki43zoo.jpetstore.ui.controller.*;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.mapper.MapperFactoryBean;
-import org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.event.ApplicationEventMulticaster;
-import org.springframework.context.event.SimpleApplicationEventMulticaster;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
@@ -82,6 +78,10 @@ public class Config {
         return factoryBean;
     }
 /*18*/
+    @Bean
+    AuthController authController(){
+        return new AuthController();
+    }
     @Bean
     AccountController accountController() throws Exception {
         return new AccountController(accountService());
