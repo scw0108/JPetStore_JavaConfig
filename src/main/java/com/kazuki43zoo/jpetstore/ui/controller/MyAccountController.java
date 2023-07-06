@@ -46,7 +46,6 @@ public class MyAccountController{
 	public MyAccountController(AccountService accountService, ApplicationEventPublisher publisher) {
 		this.accountService = accountService;
 		this.publisher = publisher;
-		System.out.println((publisher));
 	}
 
 	@ModelAttribute
