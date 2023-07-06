@@ -25,7 +25,7 @@ import org.apache.ibatis.annotations.Select
 /**
  * @author Kazuki Shimizu
  */
-@Mapper
+
 @CacheNamespace
 interface OrderMapper {
 

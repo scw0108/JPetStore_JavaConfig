@@ -27,6 +27,8 @@ import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 
 import javax.sql.DataSource;
 import java.time.Clock;
+import java.util.Arrays;
+import java.util.List;
 
 @Configuration
 public class Config {
@@ -79,7 +81,7 @@ public class Config {
         factoryBean.setSqlSessionFactory(sqlSessionFactory());
         return factoryBean;
     }
-
+/*18*/
     @Bean
     AccountController accountController() throws Exception {
         return new AccountController(accountService());
@@ -150,5 +152,21 @@ public class Config {
     @Bean
     MyAccountController myAccountController() throws Exception {
         return new MyAccountController(accountService(),publisher());
+    }
+
+
+    @Bean
+    List<String> clCreditCardTypes() {
+        return Arrays.asList("Visa", "MasterCard", "American Express");
+    }
+
+    @Bean
+    List<String> clCategories() {
+        return Arrays.asList("FISH", "DOGS", "REPTILES", "CATS", "BIRDS");
+    }
+
+    @Bean
+    List<String> clLanguages() {
+        return Arrays.asList("English", "Japanese");
     }
 }
